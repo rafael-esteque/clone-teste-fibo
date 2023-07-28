@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 03 - Estruturas Condicionais</title>
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+    crossorigin="anonymous"
+    >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </head>
+
+  <body class="bg-dark">
+    <hr/>
+
+    <section class="container" style="background-color: #DCDCDC; padding: 1rem; max-width: 35rem;">
+        <h1 style="text-align: center; font-size: 2rem;">Módulo Javascript - Aula 03 - Task</h1>
+        <hr/>
+
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 01 - Cálculo de média</h2>
+        <img style="max-width: 20rem; margin: 0.5rem;" src="./img/boletim.JPG">    
+        <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+            <label for="t1">Informe a nota do T1</label>
+            <input id="trabalho1" style="width: 5rem;" placeholder="T1">
+            <label for="t2">Informe a nota do T2</label>
+            <input id="trabalho2" style="width: 5rem;" placeholder="T1">
+            <label for="p1">Informe a nota da P1</label>
+            <input id="prova1" style="width: 5rem;" placeholder="P1">
+            <small class="form-text text-muted" style="text-align: center">Vamos calcular a média.</small>
+            <div>
+                <button onclick="calculaMedia()" class="btn btn-info" style="margin: 1rem;">Calcular</button>
+                <button onclick="resetarExUm()" class="btn btn-dark" style="margin: 1rem;">Resetar</button>
+            </div>
+            <p id="resultadoExUm" style="background-color: #fff; text-align: center; border-style: solid; width: 20rem; height: fit-content; overflow-wrap: break-word;">Média:</p>
+        </div>
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 02 - Soma dos primeiros 50 pares</h2>
+        <img style="max-width: 20rem; margin: 0.5rem;" src="./img/pares-soma.jpg">
+        <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+            <small class="form-text text-muted" style="text-align: center">Vamos fazer a soma dos 50 primeiros numeros pares:</small>
+            <div>
+                <button onclick="somaPares()" class="btn btn-info" style="margin: 1rem;">Somar</button>
+                <button onclick="resetarExDois()" class="btn btn-dark" style="margin: 1rem;">Resetar</button>
+            </div>
+            <p id="resultadoExDois" style="background-color: #fff; text-align: center; border-style: solid; width: 20rem; height: fit-content; overflow-wrap: break-word;">Resultado:</p>
+        </div>   
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 03 - Relógio em tempo real</h2>
+          <img style="max-width: 20rem; margin: 0.5rem;" src="./img/relogio.JPG">
+          <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+              <small class="form-text text-muted" style="text-align: center">Ao rodar, esta mensagem se auto destruirá em 10 segundos.</small>
+              <div id="clock"></div>
+              <div>
+                  <button onclick="startRelogio()" class="btn btn-info" style="margin: 1rem;">Rodar</button>
+              </div>
+          </div>   
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 04 - Opções na Hospedagem</h2>
+          <img style="max-width: 20rem; margin: 0.5rem;" src="./img/hotel.jpg">
+          <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+              <small class="form-text text-muted" style="text-align: center">Ao rodar este exercício, serão exibidas opções sobre a sua hospedagem no hotel Vem Ser.</small>
+              <div>
+                  <button onclick="opcoesHospedagem()" class="btn btn-info" style="margin: 1rem;">Rodar</button>
+              </div>
+          </div>   
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 05 - Quantidade de Carbono</h2>
+          <img style="max-width: 20rem; margin: 0.5rem;" src="./img/carbon.jpg">
+          <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+              <small class="form-text text-muted" style="text-align: center">Ao rodar este exercício, serão solicitadas as quantidades de carbono de dois elementos distintos, e a quantidade de carbono do primeiro elemento será comparada com a do segundo acrescida de 2.</small>
+              <div>
+                  <button onclick="compararCarbono()" class="btn btn-info" style="margin: 1rem;">Rodar</button>
+              </div>
+          </div>   
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 06 - Pares de 1 a 100</h2>
+        <img style="max-width: 20rem; margin: 0.5rem;" src="./img/pares.JPG">
+        <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+            <small class="form-text text-muted" style="text-align: center">Vamos encontrar os números pares de 1 a 100:</small>
+            <div>
+                <button onclick="paresAteCem()" class="btn btn-info" style="margin: 1rem;">Buscar</button>
+                <button onclick="resetarExSeis()" class="btn btn-dark" style="margin: 1rem;">Resetar</button>
+            </div>
+            <p id="resultadoExSeis" style="background-color: #fff; text-align: center; border-style: solid; width: 20rem; height: fit-content; overflow-wrap: break-word;">Resultado:</p>
+        </div>   
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 07 - Calopsita</h2>
+          <img style="max-width: 20rem; margin: 0.5rem;" src="./img/calopsita.JPG">
+          <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+              <small class="form-text text-muted" style="text-align: center">Ao rodar este exercício, uma idade será solicitada. <br>Mas não adianta digitar "calopsita"!</small>
+              <div>
+                  <button onclick="calopsita()" class="btn btn-info" style="margin: 1rem;">Rodar</button>
+              </div>
+              <small class="form-text text-muted" style="text-align: center">(e também não vale ficar sem digitar nada)</small>
+          </div>   
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 08 - Percentual de aumento</h2>
+        <img style="max-width: 20rem; margin: 0.5rem;" src="./img/salary-raise.jpg">
+        <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+            <label for="salarioInicialExOito">Salário inicial em 2013:</label>
+            <div style="width: 8rem; display: flex; flex-direction: row; justify-content: space-between;">
+              <p>R$ </p>
+              <input id="salarioInicialExOito" style="width: 5rem; height: 1.5rem;" placeholder="1000">
+              <p> ,00</p>
+            </div>
+            <label for="anoAtual">Ano atual:</label>
+            <input type="number" id="anoAtual" min="2014" max="2023" step="1" value="2023" style="width: 5rem">
+            <small class="form-text text-muted" style="text-align: center">Vamos Vamos calcular os aumentos desde 2013!</small>
+            <div>
+                <button onclick="calculaAumentos()" class="btn btn-info" style="margin: 1rem;">Calcular</button>
+                <button onclick="resetarExOito()" class="btn btn-dark" style="margin: 1rem;">Resetar</button>
+            </div>
+        </div>  
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 09 - A sequência de Fibonacci</h2>
+            <img style="max-width: 20rem; margin: 0.5rem;" src="./img/leo-fibo.jpg">
+            <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+                <input id="numeroUsuarioExNove" style="width: 20rem;" placeholder="Informe um número positivo e inteiro...">
+                <small class="form-text text-muted" style="text-align: center">Vamos encontrar os primeiros números da Sequência de Fibonacci no intervalo definido pelo seu número!</small>
+                <div>
+                    <button onclick="geraFibo()" class="btn btn-info" style="margin: 1rem;">Buscar</button>
+                    <button onclick="resetarExNove()" class="btn btn-dark" style="margin: 1rem;">Resetar</button>
+                </div>
+                <p id="resultadoExNove" style="background-color: #fff; text-align: center; border-style: solid; width: 20rem; height: fit-content; overflow-wrap: break-word;">Resultado:</p>
+            </div>    
+      </div>
+      <hr/>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-size: 1.5rem; text-align: center;">Exercício 10 - O Crivo de Erastótenes</h2>
+        <img style="max-width: 20rem; margin: 0.5rem;" src="./img/eratostenes.jpg">    
+        <div style="display: flex; flex-direction: column; min-width: 20rem; margin: 0 auto; align-items: center;">
+            <input id="numeroUsuarioExDez" style="width: 20rem;" placeholder="Informe um número positivo e inteiro...">
+            <small class="form-text text-muted" style="text-align: center">Vamos encontrar todos os números primos no intervalo entre 0 e o seu número!</small>
+            <div>
+                <button onclick="encontrarPrimosAteN()" class="btn btn-info" style="margin: 1rem;">Buscar</button>
+                <button onclick="resetarExDez()" class="btn btn-dark" style="margin: 1rem;">Resetar</button>
+            </div>
+            <p id="resultadoExDez" style="background-color: #fff; text-align: center; border-style: solid; width: 20rem; height: fit-content; overflow-wrap: break-word;">Resultado:</p>
+        </div>
+      </div>
+      <hr/>
+
+    </section>
+  </body>
+</html>
